@@ -3,13 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ProductModule } from './products/product.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    WelcomeComponent,
+    
   ],
   imports: [
     BrowserModule,
+    ProductModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="card">
+        <h1>{{title}}</h1>
+        <p class="text-info">This Angular App is Created By {{name}}</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            
+            <thead class="thead-dark">
+                <th>
+                    Id
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Color
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Instock
+                </th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let p of products">
+
+                    <td>
+                        {{p.Id}}
+                    </td>
+                    <td>
+                        {{p.Name | uppercase}}
+                    </td>
+                    <td>
+                        {{p.price | currency:'USD' : 'symbol' :'1.2-2'}}
+                    </td>
+                    <td>
+                        {{p.color}}
+                    </td>
+                    <td>
+                        {{p.Quantity}}
+                    </td>
+                    
+                    <td>
+                          <i *ngIf='p.instock' class="fa fa-check" aria-hidden="true"></i>
+                          <i *ngIf="!p.instock" class="fa fa-times" aria-hidden="true"></i>
+                        </td>
+                    <td>
+                        <button (click)='editProduct(p.Id)' class="btn btn-info"><i class="fa fa-edit" ></i></button>
+                    </td>
+                    <td>
+                            <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
